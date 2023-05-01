@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+      body {
+        font-family: poppins;
+      }
+      .aside {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .aside img {
+        width: 100px;
+        height: 100px;
+      }
+      .aside img {
+        opacity: 0.5;
+      }
+      .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .showcase img {
+        width: 350px;
+      }
+      .aside .selected {
+        opacity: 1;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        margin-top:100px;
+      }
+      .content-description {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        letter-spacing:1px;
+      }
+      .content-description h1{
+        /* letter-spacing:1px; */
+        margin-bottom:0px;
+        margin-top:0;
+      }
+      .content-description p{
+        margin-bottom:10px;
+      }
+      .content-description li{
+        margin-bottom:10px;
+      }
+      .reviews{
+        color:grey;
+        /* letter-spacing:0px; */
+      }
+      .rating{
+        display: inline-block;
+        background-color: green;
+        color:white;
+        border-radius:15px;
+        font-size:.8rem;
+        padding:2px 5px;
+      }
+      .rating-and-reviews{
+        display: flex;
+        gap:15px;
+        margin-bottom:25px;
+      }
+      del{
+        font-size:.8rem
+      }
+      .discount-value{
+        color:green;
+      }
+      .product-price{
+        margin-bottom:25px;
+      }
+      .content-description button{
+        padding:5px 20px;
+        border-radius:5px;
+        cursor:pointer;
+      }
+      .buy-button{
+        display: flex;
+        gap:25px;
+      }
+      button.buy-now{
+        border:none;
+        background-color: rgb(231, 110, 29);
+        color:white;
+      }
+      button.wishlist{
+        border:1px solid black;
+        background-color: white;
+      
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="aside">
+          <img
+            src="img/image-1.jpg"
+            class="selected"
+            alt=""
+            onclick="showImage(this)"
+          />
+          <img src="img/image-2.jpg" alt="" onclick="showImage(this)" />
+          <img src="img/image-3.jpg" alt="" onclick="showImage(this)" />
+          <img src="img/image-4.jpg" alt="" onclick="showImage(this)" />
+        </div>
+        <div class="showcase"><img src="img/image-4.jpg" alt="" /></div>
+      </div>
+      <div class="content-description">
+        <h1>Navy-Blue Chest-Printed T-Shirt</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+          nesciunt soluta pariatur? Veniam velit a ex odio. Quidem architecto
+          aspernatur cum in doloribus.
+        </p>
+        <ul>
+          <li>Animi nesciunt soluta</li>
+          <li>sit amet consectetur</li>
+          <li>cum in doloribus</li>
+        </ul>
+        <div class="rating-and-reviews"><span class="rating">4.5 <i class="bi bi-star-fill"></i></span><span class="reviews">11,000 ratings and 2500 reviews</span></div>
+        <div class="product-price">Rs. 397 <del>Rs. 1200</del><span class="discount-value"> (30% Off)</span></div>
+        <div class="buy-button">
+          <button class="buy-now"><i class="bi bi-bag-fill"></i> Buy Now</button><button class="wishlist"><i class="bi bi-heart-fill"></i> On Flipkart</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showImage(img) {
+        const showcaseImage = document.querySelector(".showcase img");
+        const allImages = document.querySelectorAll(".aside img");
+
+        allImages.forEach((image) => {
+          image.classList.remove("selected");
+        });
+        img.classList.add("selected");
+        showcaseImage.src = img.src;
+      }
+    </script>
+  </body>
+</html>

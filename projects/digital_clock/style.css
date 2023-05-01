@@ -1,0 +1,36 @@
+:root{
+    --background-color:#185adb;
+    --clock-color:#ffc947;
+}
+
+html{
+    font-size:100%;
+}
+body {
+  height:97vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  color: var(--clock-color);
+  font-size: 10em;
+}
+
+span{
+  margin:25px;
+}
+
+@media (max-width:768px){
+  html{
+    font-size:50%;
+  }
+}
+@media (max-width:468px){
+  html{
+    font-size:25%;
+  }
+}
